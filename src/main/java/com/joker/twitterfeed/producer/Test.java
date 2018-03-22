@@ -11,9 +11,9 @@ public class Test {
 
 	@Autowired
 	private Producer producer;
-	
+
 	@Scheduled(fixedDelay = 1000)
 	public void sendDummyData() {
-	    producer.send("twiter-feed-topic", "Fixed delay task - " + System.currentTimeMillis());
+		producer.send("twiter-feed-topic", "Fixed delay task - " + System.currentTimeMillis());
 	}
 }

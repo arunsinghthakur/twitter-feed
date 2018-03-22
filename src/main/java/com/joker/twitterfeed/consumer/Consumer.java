@@ -6,8 +6,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 
 public class Consumer {
 
-	private static final Logger LOGGER = LoggerFactory
-			.getLogger(Consumer.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(Consumer.class);
 
 	@KafkaListener(topics = "${kafka.topic.twiter-feed-topic}")
 	public void receive(String payload) {

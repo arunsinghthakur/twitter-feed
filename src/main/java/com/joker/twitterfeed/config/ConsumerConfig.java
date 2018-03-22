@@ -29,24 +29,14 @@ public class ConsumerConfig {
 		Map<String, Object> props = new HashMap<>();
 		// list of host:port pairs used for establishing the initial connections
 		// to the Kafka cluster
-		props.put(
-				org.apache.kafka.clients.consumer.ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,
-				bootstrapServers);
-		props.put(
-				org.apache.kafka.clients.consumer.ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG,
-				StringDeserializer.class);
-		props.put(
-				org.apache.kafka.clients.consumer.ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
-				StringDeserializer.class);
+		props.put(org.apache.kafka.clients.consumer.ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
+		props.put(org.apache.kafka.clients.consumer.ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+		props.put(org.apache.kafka.clients.consumer.ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
 		// allows a pool of processes to divide the work of consuming and
 		// processing records
-		props.put(
-				org.apache.kafka.clients.consumer.ConsumerConfig.GROUP_ID_CONFIG,
-				"twiter-feed-topic");
+		props.put(org.apache.kafka.clients.consumer.ConsumerConfig.GROUP_ID_CONFIG, "twiter-feed-topic");
 		// automatically reset the offset to the earliest offset
-		props.put(
-				org.apache.kafka.clients.consumer.ConsumerConfig.AUTO_OFFSET_RESET_CONFIG,
-				"earliest");
+		props.put(org.apache.kafka.clients.consumer.ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
 		return props;
 	}
