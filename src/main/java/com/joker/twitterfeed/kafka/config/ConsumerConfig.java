@@ -1,4 +1,4 @@
-package com.joker.twitterfeed.config;
+package com.joker.twitterfeed.kafka.config;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,7 +15,7 @@ import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.listener.ConcurrentMessageListenerContainer;
 
-import com.joker.twitterfeed.consumer.Consumer;
+import com.joker.twitterfeed.kafka.consumer.Consumer;
 
 @Configuration
 @EnableKafka

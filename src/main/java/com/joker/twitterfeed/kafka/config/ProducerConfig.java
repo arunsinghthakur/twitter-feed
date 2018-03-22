@@ -1,4 +1,4 @@
-package com.joker.twitterfeed.config;
+package com.joker.twitterfeed.kafka.config;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,7 +11,7 @@ import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
 
-import com.joker.twitterfeed.producer.Producer;
+import com.joker.twitterfeed.kafka.producer.Producer;
 
 @Configuration
 public class ProducerConfig {

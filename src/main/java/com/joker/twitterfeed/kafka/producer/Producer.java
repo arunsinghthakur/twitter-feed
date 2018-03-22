@@ -1,4 +1,4 @@
-package com.joker.twitterfeed.producer;
+package com.joker.twitterfeed.kafka.producer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
