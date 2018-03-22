@@ -1,4 +1,0 @@
-kafka:
-  bootstrap-servers: localhost:9091,localhost:9092,localhost:9093
-  topic:
-    twiter-feed-topic: twiter-feed-topic
