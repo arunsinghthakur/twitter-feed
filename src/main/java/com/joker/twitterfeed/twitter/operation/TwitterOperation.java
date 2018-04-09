@@ -9,6 +9,7 @@ import org.springframework.social.twitter.api.Tweet;
 import org.springframework.social.twitter.api.Twitter;
 
 import com.joker.twitterfeed.kafka.producer.Producer;
+import com.joker.twitterfeed.spark.config.SparkOperation;
 
 @EnableScheduling
 @Configuration
@@ -20,15 +21,21 @@ public class TwitterOperation {
 	@Autowired
 	private Twitter twitterTemplate;
 
-	@Scheduled(fixedDelay = 1000)
+	@Autowired
+	private SparkOperation sparkOp;
+
+	// @Scheduled(fixedDelay = 1000)
 	public void pushTwitterData() {
-		//producer.send("twiter-feed-topic", "Fixed delay task - " + System.currentTimeMillis());
 
 		SearchResults results = twitterTemplate.searchOperations().search("@SpringBoot", 200);
-		for(Tweet tweet : results.getTweets()) {
+		for (Tweet tweet : results.getTweets()) {
 			producer.send("twiter-feed-topic", tweet.getText());
 		}
+	}
 
+	@Scheduled(fixedDelay = 1000)
+	public void pushTwitterdataIntoSpark() {
+		sparkOp.test();
 	}
 
 }

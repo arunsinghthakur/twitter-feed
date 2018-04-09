@@ -3,7 +3,11 @@ kafka:
   topic:
     twiter-feed-topic: twiter-feed-topic
 twitter:
-  consumer-key: o9hooByWxpk5qCbO9XBq4RDbn
-  consumer-secret: kGvO6h59R6cquTi5ntsyAvpJU75EixJNQSZqDDIpCRdXILR12s
-  access-token: 86658823-dZRwKmjJJNyzlzzucDJfGbofKsc3r4gphnCiIIndv
-  consumer-token-secret: V07QFo23A8mTrHZUZmGIJUK0Rz495rZBAG41JT2x2XxG7      
+  consumer-key:  
+  consumer-secret:  
+  access-token:  
+  access-secret-token:  
+spark:
+  home: E:/software/apachespark/spark
+  master.uri: local
+  app.name: twiter-feed        

@@ -3,7 +3,6 @@ package com.joker.twitterfeed.kafka.config;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.kafka.clients.consumer.ConsumerConfigTest;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -27,15 +26,10 @@ public class ConsumerConfig {
 	@Bean
 	public Map<String, Object> consumerConfigs() {
 		Map<String, Object> props = new HashMap<>();
-		// list of host:port pairs used for establishing the initial connections
-		// to the Kafka cluster
 		props.put(org.apache.kafka.clients.consumer.ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServers);
 		props.put(org.apache.kafka.clients.consumer.ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
 		props.put(org.apache.kafka.clients.consumer.ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
-		// allows a pool of processes to divide the work of consuming and
-		// processing records
 		props.put(org.apache.kafka.clients.consumer.ConsumerConfig.GROUP_ID_CONFIG, "twiter-feed-topic");
-		// automatically reset the offset to the earliest offset
 		props.put(org.apache.kafka.clients.consumer.ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
 		return props;
